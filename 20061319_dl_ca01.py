@@ -56,26 +56,6 @@ import os
 model = OwlViTForObjectDetection.from_pretrained("google/owlvit-base-patch32")
 processor = OwlViTProcessor.from_pretrained("google/owlvit-base-patch32")
 
-import zipfile
-import os
-
-zip_path = '/content/CA01 Project.zip'  # Colab stores your upload here
-extract_dir = '/content/CA01_Project'
-
-with zipfile.ZipFile(zip_path, 'r') as zip_ref:
-    zip_ref.extractall(extract_dir)
-
-# Check the directory structure
-os.listdir(extract_dir)
-
-annotation_file = '/content/CA01_Project/CA01 Project/lvis_v1_train.json/_annotations.coco.json'
-images_dir = '/content/CA01_Project/CA01 Project/train2017'
-
-from pycocotools.coco import COCO
-
-annotation_file = '/content/CA01_Project/CA01 Project/lvis_v1_train.json/_annotations.coco.json'
-coco = COCO(annotation_file)
-
 # List all categories in your dataset
 cat_ids = coco.getCatIds()
 cats = coco.loadCats(cat_ids)
