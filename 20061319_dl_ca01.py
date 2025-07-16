@@ -288,7 +288,7 @@ def process_detections(coco, processor, model, images_dir, category_names):
 
 
 
-# 8. Visualization (improved version)
+# 8. Visualization
 def visualize_top_detections(coco, detections, images_dir, num_samples=3):
     """Show best detections with annotations"""
     # Group by image and get highest score
